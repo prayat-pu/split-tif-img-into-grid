@@ -57,8 +57,11 @@ def split_tiff_image(data,num_rows,num_cols,img_name,save_path):
             folder_name = f'{save_path}{row}_{col}'
             create_folder(folder_name)
             image_name = folder_name+f'/{img_name}_{row}_{col}'
+
+            row_slices = (row*new_img_height,(row+1)*new_img_height) # (row start, row stop)
+            col_slices = (col*new_img_width,(col+1)*new_img_width) # (col start, col stop)
            
-            new_img = data.read(window=Window(col,row,new_img_width,new_img_height))
+            new_img = data.read(window=Window.from_slices(row_slices,col_slices))
             
             save_tiff_img(data,
                           new_img,
