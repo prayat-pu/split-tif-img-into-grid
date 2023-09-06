@@ -4,7 +4,7 @@ This repositories contain python code which used for splitting tiff image by gri
 
 
 User should use python version > 3.9 which compatible with rasterio.
-'''pip install -r requirements.txt <-------- run this first on terminal'''
+'pip install -r requirements.txt <-------- run this first on terminal'
 
 run main.py in terminal -> python main.py.
 
